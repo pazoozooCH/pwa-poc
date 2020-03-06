@@ -10,6 +10,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { NavigationModule } from './navigation/navigation.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { environment } from '../environments/environment';
     MatToolbarModule,
     MatCardModule,
     MatButtonModule,
+    NavigationModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
