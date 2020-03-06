@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "fir-poc-1": {
+      "hosting": {
+        "pwa-poc": [
+          "inftec-pwa-poc"
+        ]
+      }
+    }
+  }
+}

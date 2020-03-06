@@ -49,3 +49,12 @@ The following workspace settings (`.vscode/settings.json`) are recommended:
 
 These settings will make Visual Studio Code automatically format code (using Prettier)
 and auto-fix linting issues on save.
+
+## Deployment
+
+The app will be deployed to _Firebase Hosting_:
+
+1. Build and deploy app: `ng deploy`
+2. Access at one of the following links:
+   - <https://inftec-pwa-poc.firebaseapp.com/>
+   - <https://inftec-pwa-poc.web.app/>
