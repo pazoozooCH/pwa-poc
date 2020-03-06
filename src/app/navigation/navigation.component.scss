@@ -16,6 +16,9 @@
 
 h1.app-name {
   margin-left: 8px;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .sidenav-container {
