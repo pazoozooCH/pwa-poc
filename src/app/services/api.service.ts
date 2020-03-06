@@ -14,7 +14,7 @@ export interface Item {
   providedIn: "root"
 })
 export class ApiService {
-  private baseURL: string = "https://www.techiediaries.com/api/data.json";
+  private baseURL = "https://www.techiediaries.com/api/data.json";
 
   constructor(private httpClient: HttpClient) {}
 
