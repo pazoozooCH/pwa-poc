@@ -1,6 +1,11 @@
 <mat-menu #accountMenu="matMenu" xPosition="after">
-  <button mat-menu-item disabled="true">Login</button>
-  <button mat-menu-item disabled="true">Logout</button>
+  <ng-container *ngIf="user$ | async as user">
+    <button mat-menu-item disabled="true">{{ user.displayName }}</button>
+    <button mat-menu-item (click)="logout()">Logout</button>
+  </ng-container>
+  <ng-container *ngIf="!(user$ | async)">
+    <button mat-menu-item (click)="loginGoogle()">Login with Google</button>
+  </ng-container>
 </mat-menu>
 
 <button mat-icon-button [matMenuTriggerFor]="accountMenu">
