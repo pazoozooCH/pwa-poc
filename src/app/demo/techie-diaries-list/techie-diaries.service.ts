@@ -10,15 +10,13 @@ export interface Item {
   markdown: string;
 }
 
-@Injectable({
-  providedIn: "root"
-})
-export class ApiService {
+@Injectable()
+export class TechieDiariesService {
   private baseURL = "https://www.techiediaries.com/api/data.json";
 
   constructor(private httpClient: HttpClient) {}
 
-  fetch(): Observable<Item[]> {
+  getList$(): Observable<Item[]> {
     return this.httpClient.get<Item[]>(this.baseURL);
   }
 }

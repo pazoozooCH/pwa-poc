@@ -1,12 +1,14 @@
 import { Component, OnInit } from "@angular/core";
+import { TechieDiariesService } from "./techie-diaries.service";
 
 @Component({
   selector: "app-techie-diaries-list",
   templateUrl: "./techie-diaries-list.component.html",
-  styleUrls: ["./techie-diaries-list.component.scss"]
+  styleUrls: ["./techie-diaries-list.component.scss"],
+  providers: [TechieDiariesService]
 })
-export class TechieDiariesListComponent implements OnInit {
-  constructor() {}
+export class TechieDiariesListComponent {
+  items$ = this.techieDiariesService.getList$();
 
-  ngOnInit(): void {}
+  constructor(private techieDiariesService: TechieDiariesService) {}
 }
