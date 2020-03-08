@@ -1,10 +1,17 @@
 import { MediaMatcher } from "@angular/cdk/layout";
-import { Component, OnInit, OnDestroy, ChangeDetectorRef } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  ChangeDetectorRef,
+  ChangeDetectionStrategy
+} from "@angular/core";
 
 @Component({
   selector: "app-navigation",
   templateUrl: "./navigation.component.html",
-  styleUrls: ["./navigation.component.scss"]
+  styleUrls: ["./navigation.component.scss"],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavigationComponent implements OnDestroy {
   mobileQuery: MediaQueryList;

@@ -1,0 +1,33 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Authentication Info</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <table
+      mat-table
+      *ngIf="userInfo$ | async as userInfo; else notLoggedIn"
+      [dataSource]="userInfo"
+    >
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="value">
+        <th mat-header-cell *matHeaderCellDef>Value</th>
+        <td mat-cell *matCellDef="let element">
+          <span class="table__value">{{ element.value }}</span>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <ng-template #notLoggedIn>
+      <div class="app-flex-centered not-logged-in">
+        <div>Not logged in</div>
+      </div>
+    </ng-template>
+  </mat-card-content>
+</mat-card>

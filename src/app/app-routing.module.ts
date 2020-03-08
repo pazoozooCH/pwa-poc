@@ -9,6 +9,11 @@ const routes: Routes = [
     loadChildren: () => import("./demo/demo.module").then(m => m.DemoModule)
   },
   {
+    path: "firebase",
+    loadChildren: () =>
+      import("./firebase/firebase.module").then(m => m.FirebaseModule)
+  },
+  {
     path: "",
     component: WelcomeComponent
   }

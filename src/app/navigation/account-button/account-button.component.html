@@ -3,7 +3,7 @@
     <button mat-menu-item disabled="true">{{ user.displayName }}</button>
     <button mat-menu-item (click)="logout()">Logout</button>
   </ng-container>
-  <ng-container *ngIf="!(user$ | async)">
+  <ng-container *ngIf="(loggedIn$ | async) === false">
     <button mat-menu-item (click)="loginGooglePopup()">
       Login with Google (Popup)
     </button>
@@ -14,7 +14,7 @@
 </mat-menu>
 
 <button mat-icon-button [matMenuTriggerFor]="accountMenu">
-  <mat-icon [class.not-logged-in]="!(loggedIn$ | async)"
+  <mat-icon [class.not-logged-in]="(loggedIn$ | async) === false"
     >account_circle</mat-icon
   >
 </button>
