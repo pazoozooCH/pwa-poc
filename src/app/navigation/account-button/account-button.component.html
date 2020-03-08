@@ -4,10 +4,17 @@
     <button mat-menu-item (click)="logout()">Logout</button>
   </ng-container>
   <ng-container *ngIf="!(user$ | async)">
-    <button mat-menu-item (click)="loginGoogle()">Login with Google</button>
+    <button mat-menu-item (click)="loginGooglePopup()">
+      Login with Google (Popup)
+    </button>
+    <button mat-menu-item (click)="loginGoogleRedirect()">
+      Login with Google (Redirect)
+    </button>
   </ng-container>
 </mat-menu>
 
 <button mat-icon-button [matMenuTriggerFor]="accountMenu">
-  <mat-icon>account_circle</mat-icon>
+  <mat-icon [class.not-logged-in]="!(loggedIn$ | async)"
+    >account_circle</mat-icon
+  >
 </button>

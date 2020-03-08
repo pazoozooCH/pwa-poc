@@ -14,10 +14,23 @@ export class NavigationComponent implements OnDestroy {
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
     this.mobileQuery = media.matchMedia("(max-width: 600px)");
     this.mobileQueryListener = () => changeDetectorRef.detectChanges();
-    this.mobileQuery.addEventListener("change", this.mobileQueryListener);
+
+    if (this.mobileQuery.addEventListener) {
+      this.mobileQuery.addEventListener("change", this.mobileQueryListener);
+    } else {
+      // Safari
+      // tslint:disable-next-line: deprecation
+      this.mobileQuery.addListener(this.mobileQueryListener);
+    }
   }
 
   ngOnDestroy(): void {
-    this.mobileQuery.removeEventListener("change", this.mobileQueryListener);
+    if (this.mobileQuery.addEventListener) {
+      this.mobileQuery.removeEventListener("change", this.mobileQueryListener);
+    } else {
+      // Safari
+      // tslint:disable-next-line: deprecation
+      this.mobileQuery.removeListener(this.mobileQueryListener);
+    }
   }
 }
