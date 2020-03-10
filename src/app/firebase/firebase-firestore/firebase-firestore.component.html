@@ -1,0 +1,26 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Actions</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="content__actions">
+    <button mat-flat-button color="primary" (click)="addMessage()">
+      Add Message
+    </button>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title
+      >Latest
+      {{ FirebaseFirestoreComponent.messageLimit }} Messages</mat-card-title
+    >
+  </mat-card-header>
+  <mat-card-content>
+    <ul>
+      <li *ngFor="let message of messages$ | async">
+        {{ message.value }} [date: {{ message.date.toDate().toISOString() }}]
+      </li>
+    </ul>
+  </mat-card-content>
+</mat-card>

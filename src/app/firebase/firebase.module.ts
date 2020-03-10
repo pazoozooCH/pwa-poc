@@ -5,13 +5,16 @@ import { FirebaseRoutingModule } from "./firebase-routing.module";
 import { AngularFireModule } from "@angular/fire";
 import { MatCardModule } from "@angular/material/card";
 import { MatTableModule } from "@angular/material/table";
+import { FirebaseFirestoreComponent } from "./firebase-firestore/firebase-firestore.component";
+import { MatButtonModule } from "@angular/material/button";
 
 @NgModule({
-  declarations: [FirebaseAuthenticationComponent],
+  declarations: [FirebaseAuthenticationComponent, FirebaseFirestoreComponent],
   imports: [
     CommonModule,
     AngularFireModule,
     FirebaseRoutingModule,
+    MatButtonModule,
     MatCardModule,
     MatTableModule
   ]

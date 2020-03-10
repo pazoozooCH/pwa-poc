@@ -14,8 +14,7 @@ export class AccountButtonComponent {
   user$: Observable<firebase.User> = this.fireAuth.user;
   loggedIn$: Observable<boolean> = this.user$.pipe(
     map(user => !!user),
-    startWith(false),
-    tap(val => console.log("#loggedIn", val))
+    startWith(false)
   );
 
   constructor(private fireAuth: AngularFireAuth) {}

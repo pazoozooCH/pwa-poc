@@ -15,7 +15,6 @@ export class FirebaseAuthenticationComponent {
   userInfo$ = this.fireAuth.user.pipe(
     map(user => {
       if (user) {
-        console.log("#user", user);
         return [
           { name: "uid", value: user.uid },
           { name: "displayName", value: user.displayName },

@@ -32,6 +32,24 @@
         <a mat-list-item routerLink="firebase" routerLinkActive="link--active">
           Firebase
         </a>
+        <a
+          mat-list-item
+          class="link__nested"
+          routerLink="firebase/authentication"
+          routerLinkActive="link--active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Authentication
+        </a>
+        <a
+          mat-list-item
+          class="link__nested"
+          routerLink="firebase/firestore"
+          routerLinkActive="link--active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Firestore
+        </a>
       </mat-nav-list>
     </mat-sidenav>
 
