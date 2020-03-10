@@ -4,9 +4,10 @@ import { TechieDiariesListComponent } from "./techie-diaries-list/techie-diaries
 import { DemoRoutingModule } from "./demo-routing.module";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { MatCardModule } from "@angular/material/card";
+import { DragAndDropComponent } from './drag-and-drop/drag-and-drop.component';
 
 @NgModule({
-  declarations: [TechieDiariesListComponent],
+  declarations: [TechieDiariesListComponent, DragAndDropComponent],
   imports: [
     DemoRoutingModule,
     CommonModule,

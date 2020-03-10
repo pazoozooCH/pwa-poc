@@ -1,0 +1,17 @@
+<div class="containers">
+  <mat-card *ngFor="let i of [1, 2]">
+    <mat-card-header>
+      <mat-card-title>Container {{ i }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="contents">
+        <div *ngFor="let j of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" class="card">
+          Card {{ j }}
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <div>Some actions</div>
+    </mat-card-actions>
+  </mat-card>
+</div>

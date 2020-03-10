@@ -1,0 +1,23 @@
+.containers {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+mat-card {
+  margin: 8px;
+  width: 30vw;
+  min-width: 300px;
+}
+
+.contents {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.card {
+  min-height: 5vh;
+  background-color: yellowgreen;
+  margin: 8px;
+}
