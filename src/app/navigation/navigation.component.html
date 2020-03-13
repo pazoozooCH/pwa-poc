@@ -65,7 +65,11 @@
           routerLink="firebase/firestore"
           routerLinkActive="link--active"
           [routerLinkActiveOptions]="{ exact: true }"
+          [disabled]="authenticationService.notLoggedIn$ | async"
         >
+          <mat-icon *ngIf="authenticationService.notLoggedIn$ | async"
+            >lock</mat-icon
+          >
           Firestore
         </a>
       </mat-nav-list>

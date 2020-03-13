@@ -6,6 +6,7 @@ import {
   ChangeDetectorRef,
   ChangeDetectionStrategy
 } from "@angular/core";
+import { AuthenticationService } from "../authentication/authentication.service";
 
 @Component({
   selector: "app-navigation",
@@ -18,7 +19,11 @@ export class NavigationComponent implements OnDestroy {
 
   private mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(
+    public authenticationService: AuthenticationService,
+    changeDetectorRef: ChangeDetectorRef,
+    media: MediaMatcher
+  ) {
     this.mobileQuery = media.matchMedia("(max-width: 600px)");
     this.mobileQueryListener = () => changeDetectorRef.detectChanges();
 

@@ -2,6 +2,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { NgModule } from "@angular/core";
 import { FirebaseAuthenticationComponent } from "./firebase-authentication/firebase-authentication.component";
 import { FirebaseFirestoreComponent } from "./firebase-firestore/firebase-firestore.component";
+import { AuthGuardService } from "../authentication/auth-guard.service";
 
 const routes: Routes = [
   {
@@ -10,7 +11,8 @@ const routes: Routes = [
   },
   {
     path: "firestore",
-    component: FirebaseFirestoreComponent
+    component: FirebaseFirestoreComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: "**",
