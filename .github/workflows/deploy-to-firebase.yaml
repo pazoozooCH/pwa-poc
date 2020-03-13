@@ -5,11 +5,10 @@ on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/github-actions'
     steps:
       - run: echo ${{github.ref}}
       - run: echo matches...
-        if: github.ref == 'refs/heads/github-actions'
+        if: github.ref == 'refs/heads/master'
       - uses: actions/checkout@v2
       # - name: Cache node modules
       #   uses: actions/cache@v1
