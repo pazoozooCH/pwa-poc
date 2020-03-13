@@ -1,0 +1,22 @@
+<mat-card>
+  <mat-card-title>Camera / Picture Upload</mat-card-title>
+  <mat-card-content>
+    <input #file type="file" accept="image/*" (change)="preview(file.files)" />
+    <div class="preview" *ngIf="imgUrl$ | async as imgUrl">
+      <h3>Preview</h3>
+      <img mat-card-image [src]="imgUrl" />
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <div class="app-flex-centered">
+      <button
+        mat-flat-button
+        color="primary"
+        (click)="upload()"
+        *ngIf="imgUrl$ | async"
+      >
+        Upload...
+      </button>
+    </div>
+  </mat-card-actions>
+</mat-card>

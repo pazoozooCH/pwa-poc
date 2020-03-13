@@ -18,6 +18,7 @@ import { MatListModule } from "@angular/material/list";
 import { MatDialogModule } from "@angular/material/dialog";
 import { DemoBottomSheetComponent } from "./demo-form/demo-bottom-sheet/demo-bottom-sheet.component";
 import { DemoDialogComponent } from "./demo-form/demo-dialog/demo-dialog.component";
+import { DemoCameraComponent } from "./demo-camera/demo-camera.component";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DemoDialogComponent } from "./demo-form/demo-dialog/demo-dialog.compone
     DragAndDropComponent,
     DemoFormComponent,
     DemoBottomSheetComponent,
-    DemoDialogComponent
+    DemoDialogComponent,
+    DemoCameraComponent
   ],
   imports: [
     DemoRoutingModule,
@@ -43,6 +45,5 @@ import { DemoDialogComponent } from "./demo-form/demo-dialog/demo-dialog.compone
     MatSnackBarModule,
     ReactiveFormsModule
   ]
-  // entryComponents: [DemoDialogComponent]
 })
 export class DemoModule {}
