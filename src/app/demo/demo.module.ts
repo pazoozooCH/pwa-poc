@@ -10,6 +10,8 @@ import { DragAndDropComponent } from "./drag-and-drop/drag-and-drop.component";
 import { DemoFormComponent } from "./demo-form/demo-form.component";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
+import { ReactiveFormsModule } from "@angular/forms";
+import { MatButtonModule } from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -21,11 +23,13 @@ import { MatInputModule } from "@angular/material/input";
     DemoRoutingModule,
     CommonModule,
     DragDropModule,
+    MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    ReactiveFormsModule
   ]
 })
 export class DemoModule {}
