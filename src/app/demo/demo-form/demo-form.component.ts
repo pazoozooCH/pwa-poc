@@ -6,6 +6,8 @@ import {
   MatBottomSheetRef
 } from "@angular/material/bottom-sheet";
 import { DemoBottomSheetComponent } from "./demo-bottom-sheet/demo-bottom-sheet.component";
+import { MatDialog } from "@angular/material/dialog";
+import { DemoDialogComponent } from "./demo-dialog/demo-dialog.component";
 
 @Component({
   selector: "app-demo-form",
@@ -32,6 +34,7 @@ export class DemoFormComponent {
   constructor(
     private fb: FormBuilder,
     private bottomSheet: MatBottomSheet,
+    private dialog: MatDialog,
     private snackBar: MatSnackBar
   ) {}
 
@@ -43,5 +46,9 @@ export class DemoFormComponent {
 
   doSomething() {
     this.bottomSheet.open(DemoBottomSheetComponent);
+  }
+
+  save() {
+    const dialogRef = this.dialog.open(DemoDialogComponent);
   }
 }

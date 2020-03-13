@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Saving...</h1>
+<div mat-dialog-content>
+  <p>Your changes would be saved now...</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Oh well...</button>
+  <button mat-button color="primary" [mat-dialog-close]="null" cdkFocusInitial>
+    Ok
+  </button>
+</div>

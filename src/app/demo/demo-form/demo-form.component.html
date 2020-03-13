@@ -89,3 +89,13 @@
   <h4>Debugging - Form Value (status: {{ demoForm.status }})</h4>
   <textarea>{{ demoForm.value | json }}</textarea>
 </div>
+
+<button
+  mat-fab
+  aria-label="Save"
+  color="primary"
+  class="floating-button"
+  (click)="save()"
+>
+  <mat-icon>save</mat-icon>
+</button>

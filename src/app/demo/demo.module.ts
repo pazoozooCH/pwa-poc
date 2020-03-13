@@ -15,14 +15,17 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { MatBottomSheetModule } from "@angular/material/bottom-sheet";
 import { MatListModule } from "@angular/material/list";
+import { MatDialogModule } from "@angular/material/dialog";
 import { DemoBottomSheetComponent } from "./demo-form/demo-bottom-sheet/demo-bottom-sheet.component";
+import { DemoDialogComponent } from "./demo-form/demo-dialog/demo-dialog.component";
 
 @NgModule({
   declarations: [
     TechieDiariesListComponent,
     DragAndDropComponent,
     DemoFormComponent,
-    DemoBottomSheetComponent
+    DemoBottomSheetComponent,
+    DemoDialogComponent
   ],
   imports: [
     DemoRoutingModule,
@@ -31,6 +34,7 @@ import { DemoBottomSheetComponent } from "./demo-form/demo-bottom-sheet/demo-bot
     MatBottomSheetModule,
     MatButtonModule,
     MatCardModule,
+    MatDialogModule,
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
@@ -39,6 +43,6 @@ import { DemoBottomSheetComponent } from "./demo-form/demo-bottom-sheet/demo-bot
     MatSnackBarModule,
     ReactiveFormsModule
   ]
-  // entryComponents: [DemoBottomSheetComponent]
+  // entryComponents: [DemoDialogComponent]
 })
 export class DemoModule {}
