@@ -1,14 +1,19 @@
 .demo-form {
   margin: 8px;
-  min-width: 150px;
-  max-width: 768px;
-  // width: 100%;
+  max-width: 1024px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 8px;
 }
 
-.example-full-width {
-  width: 100%;
+.span-4 {
+  grid-column: span 4;
 }
 
-td {
-  padding-right: 8px;
+.span-6 {
+  grid-column: span 6;
+}
+
+.span-12 {
+  grid-column: span 12;
 }
