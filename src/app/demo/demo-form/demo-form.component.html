@@ -66,8 +66,21 @@
     </form>
   </mat-card-content>
   <mat-card-actions class="buttons">
-    <button mat-flat-button color="primary" [disabled]="!demoForm.valid">
+    <button
+      mat-flat-button
+      color="primary"
+      [disabled]="!demoForm.valid"
+      (click)="doSubmit()"
+    >
       Submit
+    </button>
+    <button
+      mat-flat-button
+      color="accent"
+      [disabled]="!demoForm.valid"
+      (click)="doSomething()"
+    >
+      Do something...
     </button>
   </mat-card-actions>
 </mat-card>

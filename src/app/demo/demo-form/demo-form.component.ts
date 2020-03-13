@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
   selector: "app-demo-form",
@@ -7,7 +8,9 @@ import { FormBuilder, Validators } from "@angular/forms";
   styleUrls: ["./demo-form.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DemoFormComponent implements OnInit {
+export class DemoFormComponent {
+  private static snachBarDurationInMs = 3000;
+
   demoForm = this.fb.group({
     company: [{ value: "InfTec", disabled: true }],
     firstName: ["", Validators.required],
@@ -21,7 +24,13 @@ export class DemoFormComponent implements OnInit {
     })
   });
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private snackBar: MatSnackBar) {}
 
-  ngOnInit(): void {}
+  doSubmit() {
+    this.snackBar.open("Submitting data (not really 😜)", "Close", {
+      duration: DemoFormComponent.snachBarDurationInMs
+    });
+  }
+
+  doSomething() {}
 }
