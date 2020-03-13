@@ -32,10 +32,17 @@
         <a
           mat-list-item
           class="link__nested"
+          routerLink="demo/form"
+          routerLinkActive="link--active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Form</a
+        >
+        <a
+          mat-list-item
+          class="link__nested"
           routerLink="demo/list"
           routerLinkActive="link--active"
           [routerLinkActiveOptions]="{ exact: true }"
-          TechieDiariesList
           >List</a
         >
         <a
@@ -44,7 +51,6 @@
           routerLink="demo/draganddrop"
           routerLinkActive="link--active"
           [routerLinkActiveOptions]="{ exact: true }"
-          TechieDiariesList
           >Drag & Drop</a
         >
         <a mat-list-item routerLink="firebase" routerLinkActive="link--active">

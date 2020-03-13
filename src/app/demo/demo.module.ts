@@ -7,15 +7,24 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { MatCardModule } from "@angular/material/card";
 import { MatIconModule } from "@angular/material/icon";
 import { DragAndDropComponent } from "./drag-and-drop/drag-and-drop.component";
+import { DemoFormComponent } from "./demo-form/demo-form.component";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
 
 @NgModule({
-  declarations: [TechieDiariesListComponent, DragAndDropComponent],
+  declarations: [
+    TechieDiariesListComponent,
+    DragAndDropComponent,
+    DemoFormComponent
+  ],
   imports: [
     DemoRoutingModule,
     CommonModule,
     DragDropModule,
     MatCardModule,
+    MatFormFieldModule,
     MatIconModule,
+    MatInputModule,
     MatProgressSpinnerModule
   ]
 })
