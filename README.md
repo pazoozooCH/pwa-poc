@@ -66,3 +66,14 @@ The app will be deployed to _Firebase Hosting_:
 - Create firebase token: `firebase login:ci`
 - Goto Settings of GibHub Repo and add Secret _FIREBASE_TOKEN_ with the generated token as value
 - Adapt workflow yaml to expose token as ENV variable
+
+## Installation
+
+### iOS
+
+To add the PWA to the home screen, follow these steps:
+
+1. Open application in **Safari** browser
+2. Click share button
+3. Select _Add to Homescreen_
+4. Edit name if desired and confirm
