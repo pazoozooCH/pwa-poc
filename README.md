@@ -58,3 +58,11 @@ The app will be deployed to _Firebase Hosting_:
 2. Access at one of the following links:
    - <https://inftec-pwa-poc.firebaseapp.com/>
    - <https://inftec-pwa-poc.web.app/>
+
+### Github Actions
+
+#### Initial Setup
+
+- Create firebase token: `firebase login:ci`
+- Goto Settings of GibHub Repo and add Secret _FIREBASE_TOKEN_ with the generated token as value
+- Adapt workflow yaml to expose token as ENV variable
