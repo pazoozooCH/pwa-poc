@@ -1,6 +1,11 @@
 import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import {
+  MatBottomSheet,
+  MatBottomSheetRef
+} from "@angular/material/bottom-sheet";
+import { DemoBottomSheetComponent } from "./demo-bottom-sheet/demo-bottom-sheet.component";
 
 @Component({
   selector: "app-demo-form",
@@ -24,7 +29,11 @@ export class DemoFormComponent {
     })
   });
 
-  constructor(private fb: FormBuilder, private snackBar: MatSnackBar) {}
+  constructor(
+    private fb: FormBuilder,
+    private bottomSheet: MatBottomSheet,
+    private snackBar: MatSnackBar
+  ) {}
 
   doSubmit() {
     this.snackBar.open("Submitting data (not really 😜)", "Close", {
@@ -32,5 +41,7 @@ export class DemoFormComponent {
     });
   }
 
-  doSomething() {}
+  doSomething() {
+    this.bottomSheet.open(DemoBottomSheetComponent);
+  }
 }

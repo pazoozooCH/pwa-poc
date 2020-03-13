@@ -13,25 +13,32 @@ import { MatInputModule } from "@angular/material/input";
 import { ReactiveFormsModule } from "@angular/forms";
 import { MatButtonModule } from "@angular/material/button";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { MatBottomSheetModule } from "@angular/material/bottom-sheet";
+import { MatListModule } from "@angular/material/list";
+import { DemoBottomSheetComponent } from "./demo-form/demo-bottom-sheet/demo-bottom-sheet.component";
 
 @NgModule({
   declarations: [
     TechieDiariesListComponent,
     DragAndDropComponent,
-    DemoFormComponent
+    DemoFormComponent,
+    DemoBottomSheetComponent
   ],
   imports: [
     DemoRoutingModule,
     CommonModule,
     DragDropModule,
+    MatBottomSheetModule,
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
+    MatListModule,
     MatProgressSpinnerModule,
     MatSnackBarModule,
     ReactiveFormsModule
   ]
+  // entryComponents: [DemoBottomSheetComponent]
 })
 export class DemoModule {}
