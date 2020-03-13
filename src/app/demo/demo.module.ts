@@ -5,6 +5,7 @@ import { TechieDiariesListComponent } from "./techie-diaries-list/techie-diaries
 import { DemoRoutingModule } from "./demo-routing.module";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { MatCardModule } from "@angular/material/card";
+import { MatIconModule } from "@angular/material/icon";
 import { DragAndDropComponent } from "./drag-and-drop/drag-and-drop.component";
 
 @NgModule({
@@ -14,6 +15,7 @@ import { DragAndDropComponent } from "./drag-and-drop/drag-and-drop.component";
     CommonModule,
     DragDropModule,
     MatCardModule,
+    MatIconModule,
     MatProgressSpinnerModule
   ]
 })

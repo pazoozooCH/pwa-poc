@@ -16,6 +16,9 @@
           cdkDrag
         >
           Card {{ item.value }}
+          <div class="drag-handle" cdkDragHandle>
+            <mat-icon>drag_indicator</mat-icon>
+          </div>
         </div>
       </div>
     </mat-card-content>
