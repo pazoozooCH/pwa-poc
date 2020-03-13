@@ -6,6 +6,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - run: echo ${{github.ref}}
       - uses: actions/checkout@v2
       - name: Cache node modules
         uses: actions/cache@v1
@@ -59,7 +60,6 @@ jobs:
     needs: build
     if: github.ref == 'refs/heads/master'
     steps:
-      - run: echo ${{github.ref}}
       - uses: actions/checkout@v2
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
