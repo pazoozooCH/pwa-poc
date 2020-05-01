@@ -6,11 +6,10 @@ import { environment } from "src/environments/environment";
   templateUrl: "./info.component.html",
   styleUrls: ["./info.component.scss"]
 })
-export class InfoComponent implements OnInit {
+export class InfoComponent {
   displayedColumns: string[] = ["key", "value"];
-  infos = [{ key: "Version", value: environment.version }];
-
-  constructor() {}
-
-  ngOnInit(): void {}
+  infos = [
+    { key: "Version", value: environment.buildInfo.version },
+    { key: "Build Time", value: environment.buildInfo.time }
+  ];
 }
