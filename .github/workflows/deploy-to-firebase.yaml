@@ -29,6 +29,8 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
+    outputs:
+      new_tag: ${{ steps.create_tag.outputs.new_tag }}
     steps:
       - uses: actions/checkout@v2
       - name: Cache node modules
@@ -47,6 +49,16 @@ jobs:
         with:
           node-version: "12.x"
       - run: npm ci
+      - name: Bump version and push tag
+        if: github.ref == 'refs/heads/master'
+        uses: anothrNick/github-tag-action@1.17.2
+        id: create_tag
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
+      - name: Replace version number
+        if: github.ref == 'refs/heads/master'
+        run: sed -i s/{{VERSION}}/${{ steps.create_tag.outputs.new_tag }}/ src/environment/environment.prod.ts
       - run: npm run build:prod
       - name: Archive production artifacts
         uses: actions/upload-artifact@v1
@@ -69,6 +81,16 @@ jobs:
         with:
           name: dist
           path: dist/pwa-poc
+      # Apprently, the github-tag-action will not trigger a push event, so we'll just
+      # add the whole release logic to this file as well...
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          tag_name: ${{ needs.build.outputs.new_tag }}
+          release_name: Release ${{ needs.build.outputs.new_tag }}
       - run: npm run firebase deploy -- --project fir-poc-1 --only hosting
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
