@@ -1,2 +1,14 @@
 <app-button-animation></app-button-animation>
 <app-enter-leave-animation></app-enter-leave-animation>
+
+<mat-card>
+  <mat-card-title>Routing Animations</mat-card-title>
+  <mat-card-content>
+    <router-outlet></router-outlet>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-button routerLink="flyin">FlyIn</a>
+    <a mat-button routerLink="scale">Scale</a>
+    <a mat-button routerLink="fade">Fade</a>
+  </mat-card-actions>
+</mat-card>

@@ -21,7 +21,8 @@ import { DemoDialogComponent } from "./demo-form/demo-dialog/demo-dialog.compone
 import { DemoCameraComponent } from "./demo-camera/demo-camera.component";
 import { AnimationComponent } from "./animation/animation.component";
 import { ButtonAnimationComponent } from "./animation/simple-transition-animation/simple-transition-animation.component";
-import { EnterLeaveAnimationComponent } from './animation/enter-leave-animation/enter-leave-animation.component';
+import { EnterLeaveAnimationComponent } from "./animation/enter-leave-animation/enter-leave-animation.component";
+import { RoutingTargetComponent } from './animation/routing-target/routing-target.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { EnterLeaveAnimationComponent } from './animation/enter-leave-animation/
     DemoCameraComponent,
     AnimationComponent,
     ButtonAnimationComponent,
-    EnterLeaveAnimationComponent
+    EnterLeaveAnimationComponent,
+    RoutingTargetComponent
   ],
   imports: [
     DemoRoutingModule,
