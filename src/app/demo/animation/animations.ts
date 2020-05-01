@@ -9,7 +9,7 @@ import {
 } from "@angular/animations";
 
 export const slideInAnimation = trigger("routeAnimations", [
-  transition("HomePage <=> AboutPage", [
+  transition("* => FlyIn", [
     style({ position: "relative" }),
     query(":enter, :leave", [
       style({
@@ -27,7 +27,7 @@ export const slideInAnimation = trigger("routeAnimations", [
     ]),
     query(":enter", animateChild())
   ]),
-  transition("* <=> FilterPage", [
+  transition("* => Scale", [
     style({ position: "relative" }),
     query(":enter, :leave", [
       style({
@@ -37,11 +37,33 @@ export const slideInAnimation = trigger("routeAnimations", [
         width: "100%"
       })
     ]),
-    query(":enter", [style({ left: "-100%" })]),
+    query(":enter", [style({ transform: "scale(0)" })]),
     query(":leave", animateChild()),
     group([
-      query(":leave", [animate("200ms ease-out", style({ left: "100%" }))]),
-      query(":enter", [animate("300ms ease-out", style({ left: "0%" }))])
+      query(":leave", [
+        animate("300ms ease-out", style({ transform: "scale(0)" }))
+      ]),
+      query(":enter", [
+        animate("300ms ease-out", style({ transform: "scale(1)" }))
+      ])
+    ]),
+    query(":enter", animateChild())
+  ]),
+  transition("* => Fade", [
+    style({ position: "relative" }),
+    query(":enter, :leave", [
+      style({
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%"
+      })
+    ]),
+    query(":enter", [style({ opacity: "0" })]),
+    query(":leave", animateChild()),
+    group([
+      query(":leave", [animate("300ms ease-out", style({ opacity: "0" }))]),
+      query(":enter", [animate("300ms ease-out", style({ opacity: "1" }))])
     ]),
     query(":enter", animateChild())
   ])

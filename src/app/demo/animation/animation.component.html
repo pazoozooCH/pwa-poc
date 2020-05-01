@@ -4,7 +4,7 @@
 <mat-card>
   <mat-card-title>Routing Animations</mat-card-title>
   <mat-card-content>
-    <div [@routeAnimations]="prepareRoute(outlet)">
+    <div [@routeAnimations]="prepareRoute(outlet)" class="router-container">
       <router-outlet #outlet="outlet"></router-outlet>
     </div>
   </mat-card-content>
@@ -12,5 +12,6 @@
     <a mat-button routerLink="flyin">FlyIn</a>
     <a mat-button routerLink="scale">Scale</a>
     <a mat-button routerLink="fade">Fade</a>
+    <a mat-button routerLink="none">None</a>
   </mat-card-actions>
 </mat-card>

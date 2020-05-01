@@ -33,7 +33,7 @@ const routes: Routes = [
         component: RoutingTargetComponent,
         data: {
           title: "Fly-In Animation",
-          animation: "HomePage"
+          animation: "FlyIn"
         }
       },
       {
@@ -41,7 +41,7 @@ const routes: Routes = [
         component: RoutingTargetComponent,
         data: {
           title: "Scaling Animation",
-          animation: "AboutPage"
+          animation: "Scale"
         }
       },
       {
@@ -49,7 +49,15 @@ const routes: Routes = [
         component: RoutingTargetComponent,
         data: {
           title: "Fade Animation",
-          animation: "FilterPage"
+          animation: "Fade"
+        }
+      },
+      {
+        path: "none",
+        component: RoutingTargetComponent,
+        data: {
+          title: "No Animation",
+          animation: "none"
         }
       }
     ]

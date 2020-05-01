@@ -22,7 +22,7 @@ import { DemoCameraComponent } from "./demo-camera/demo-camera.component";
 import { AnimationComponent } from "./animation/animation.component";
 import { ButtonAnimationComponent } from "./animation/simple-transition-animation/simple-transition-animation.component";
 import { EnterLeaveAnimationComponent } from "./animation/enter-leave-animation/enter-leave-animation.component";
-import { RoutingTargetComponent } from './animation/routing-target/routing-target.component';
+import { RoutingTargetComponent } from "./animation/routing-target/routing-target.component";
 
 @NgModule({
   declarations: [
