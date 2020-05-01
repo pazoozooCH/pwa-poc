@@ -4,7 +4,10 @@
 
 export const environment = {
   production: false,
-  version: "local",
+  buildInfo: {
+    version: "local",
+    time: "2020-05-01T13:35:34Z"
+  },
   firebase: {
     apiKey: "AIzaSyDk9-nnOSV3OGV-6St-NuPnQYmRo_TxtMQ",
     authDomain: "fir-poc-1.firebaseapp.com",

@@ -7,6 +7,7 @@ import {
   ChangeDetectionStrategy
 } from "@angular/core";
 import { AuthenticationService } from "../authentication/authentication.service";
+import { environment } from "src/environments/environment";
 
 @Component({
   selector: "app-navigation",

@@ -56,9 +56,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
-      - name: Replace version number
+      - name: Replace environment placeholders
         if: github.ref == 'refs/heads/master'
-        run: sed -i s/{{VERSION}}/${{ steps.create_tag.outputs.new_tag }}/ src/environment/environment.prod.ts
+        run: |
+          sed -i s/{{VERSION}}/${{ steps.create_tag.outputs.new_tag }}/ src/environments/environment.prod.ts
+          sed -i s/{{BUILD_TIME}}/$(date --utc +%FT%TZ)/ src/environments/environment.prod.ts
       - run: npm run build:prod
       - name: Archive production artifacts
         uses: actions/upload-artifact@v1

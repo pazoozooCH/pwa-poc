@@ -31,60 +31,55 @@
         >
         <a
           mat-list-item
-          class="link__nested"
           routerLink="demo/form"
           routerLinkActive="link--active"
           [routerLinkActiveOptions]="{ exact: true }"
-          >Form</a
+          ><span class="link__nested">Form</span></a
         >
         <a
           mat-list-item
-          class="link__nested"
           routerLink="demo/list"
           routerLinkActive="link--active"
           [routerLinkActiveOptions]="{ exact: true }"
-          >List</a
+          ><span class="link__nested">List</span></a
         >
         <a
           mat-list-item
-          class="link__nested"
           routerLink="demo/draganddrop"
           routerLinkActive="link--active"
           [routerLinkActiveOptions]="{ exact: true }"
-          >Drag & Drop</a
+          ><span class="link__nested">Drag & Drop</span></a
         >
         <a
           mat-list-item
-          class="link__nested"
           routerLink="demo/camera"
           routerLinkActive="link--active"
           [routerLinkActiveOptions]="{ exact: true }"
-          >Camera</a
+          ><span class="link__nested">Camera</span>Camera</a
         >
         <a mat-list-item routerLink="firebase" routerLinkActive="link--active">
           Firebase
         </a>
         <a
           mat-list-item
-          class="link__nested"
           routerLink="firebase/authentication"
           routerLinkActive="link--active"
           [routerLinkActiveOptions]="{ exact: true }"
-        >
-          Authentication
+          ><span class="link__nested">Authentication</span>
         </a>
         <a
           mat-list-item
-          class="link__nested"
           routerLink="firebase/firestore"
           routerLinkActive="link--active"
           [routerLinkActiveOptions]="{ exact: true }"
           [disabled]="authenticationService.notLoggedIn$ | async"
         >
-          <mat-icon *ngIf="authenticationService.notLoggedIn$ | async"
-            >lock</mat-icon
+          <span class="link__nested"
+            ><mat-icon *ngIf="authenticationService.notLoggedIn$ | async"
+              >lock</mat-icon
+            >
+            Firestore</span
           >
-          Firestore
         </a>
         <a mat-list-item routerLink="info" routerLinkActive="link--active"
           >Info</a
