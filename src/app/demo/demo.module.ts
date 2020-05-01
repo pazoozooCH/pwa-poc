@@ -19,6 +19,8 @@ import { MatDialogModule } from "@angular/material/dialog";
 import { DemoBottomSheetComponent } from "./demo-form/demo-bottom-sheet/demo-bottom-sheet.component";
 import { DemoDialogComponent } from "./demo-form/demo-dialog/demo-dialog.component";
 import { DemoCameraComponent } from "./demo-camera/demo-camera.component";
+import { AnimationComponent } from "./animation/animation.component";
+import { ButtonAnimationComponent } from "./animation/simple-transition-animation/simple-transition-animation.component";
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { DemoCameraComponent } from "./demo-camera/demo-camera.component";
     DemoFormComponent,
     DemoBottomSheetComponent,
     DemoDialogComponent,
-    DemoCameraComponent
+    DemoCameraComponent,
+    AnimationComponent,
+    ButtonAnimationComponent
   ],
   imports: [
     DemoRoutingModule,

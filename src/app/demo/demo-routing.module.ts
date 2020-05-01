@@ -4,6 +4,7 @@ import { TechieDiariesListComponent } from "./techie-diaries-list/techie-diaries
 import { DragAndDropComponent } from "./drag-and-drop/drag-and-drop.component";
 import { DemoFormComponent } from "./demo-form/demo-form.component";
 import { DemoCameraComponent } from "./demo-camera/demo-camera.component";
+import { AnimationComponent } from "./animation/animation.component";
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: "camera",
     component: DemoCameraComponent
+  },
+  {
+    path: "animation",
+    component: AnimationComponent
   },
   {
     path: "**",

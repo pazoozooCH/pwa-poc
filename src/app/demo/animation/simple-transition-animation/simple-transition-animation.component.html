@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-title>Simple Transition Animation</mat-card-title>
+  <mat-card-content>
+    <div [@openClose]="currentState" class="open-close-container">
+      <p>The box is now {{ currentState }}!</p>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="toggle()">Toggle</button>
+    <button
+      *ngFor="let state of states"
+      mat-button
+      (click)="setState(state)"
+      [disabled]="state === currentState"
+    >
+      {{ state }}
+    </button>
+  </mat-card-actions>
+</mat-card>
