@@ -32,21 +32,24 @@ const routes: Routes = [
         path: "flyin",
         component: RoutingTargetComponent,
         data: {
-          title: "Fly-In Animation"
+          title: "Fly-In Animation",
+          animation: "HomePage"
         }
       },
       {
         path: "scale",
         component: RoutingTargetComponent,
         data: {
-          title: "Scaling Animation"
+          title: "Scaling Animation",
+          animation: "AboutPage"
         }
       },
       {
         path: "fade",
         component: RoutingTargetComponent,
         data: {
-          title: "Fade Animation"
+          title: "Fade Animation",
+          animation: "FilterPage"
         }
       }
     ]
