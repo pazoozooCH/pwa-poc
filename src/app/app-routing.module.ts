@@ -14,6 +14,10 @@ const routes: Routes = [
       import("./firebase/firebase.module").then(m => m.FirebaseModule)
   },
   {
+    path: "info",
+    loadChildren: () => import("./info/info.module").then(m => m.InfoModule)
+  },
+  {
     path: "",
     component: WelcomeComponent
   }
