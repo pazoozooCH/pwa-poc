@@ -13,6 +13,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "lint:fix": "ng lint --fix",
+    "serve:pwa": "http-server -p 18080 -c-1 dist/pwa-poc",
     "e2e": "ng e2e",
     "firebase": "firebase"
   },
@@ -37,6 +38,7 @@
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
+    "@angular-devkit/architect": "^0.900.0-0 || ^0.900.0",
     "@angular-devkit/build-angular": "~0.900.4",
     "@angular/cli": "~9.0.4",
     "@angular/compiler-cli": "~9.0.3",
@@ -45,6 +47,11 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
     "codelyzer": "^5.1.2",
+    "firebase-tools": "^7.12.1",
+    "fuzzy": "^0.1.3",
+    "http-server": "^0.12.3",
+    "inquirer": "^6.2.2",
+    "inquirer-autocomplete-prompt": "^1.0.1",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.3.0",
@@ -56,11 +63,6 @@
     "protractor": "~5.4.3",
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
-    "typescript": "~3.7.5",
-    "@angular-devkit/architect": "^0.900.0-0 || ^0.900.0",
-    "firebase-tools": "^7.12.1",
-    "fuzzy": "^0.1.3",
-    "inquirer": "^6.2.2",
-    "inquirer-autocomplete-prompt": "^1.0.1"
+    "typescript": "~3.7.5"
   }
 }
